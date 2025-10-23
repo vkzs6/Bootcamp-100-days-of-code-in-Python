@@ -25,4 +25,4 @@ print(f"The random number it's {random_number}")
 #TIP 2: Making a mutiplication by 5
 
 random_number1 = (random_float * 5)
-print(f"The random number it's {random_number}")
+print(f"The random number it's {random_number1}")
