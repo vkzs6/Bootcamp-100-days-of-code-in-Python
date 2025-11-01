@@ -2,8 +2,15 @@ import random
 import man_module
 import string
 
+# STEP 1
 
-words = [
+# TO DO - 1: Randomly choose a word from the word_list and assign it to a variable called chosen_word.
+# TO DO - 2: Ask the user to guess a letter and assign their answer to a variable called guess, Make guess lowercase.
+# TO DO - 3: Chek if the letter the user guessed (guess) is one the letters in the chosen_word.
+
+hangman = True
+
+word_list = [
     "electricity", "computer", "hardware", "circuit", "robot", "memory", "power", "submarine",
     "chess", "resistance", "matrix", "function", "laser", "mechanism", "bodyguard", "titanic",
     "global", "ozone", "bridge", "technology", "spider", "pyramid", "sphere", "member",
@@ -19,45 +26,28 @@ words = [
 ]
 
 
+def randomly_word():
 
-def select_a_word():
-
-    word_temp = random.choice((words))
+    word_temp = random.choice((word_list))
     return word_temp
 
 
 
 
-hangman = True
-selected_word = str()
 
+guess = str() # variable choosed for the user
+chosen_word = randomly_word() # it select a random word by the function
 
-selected_word = select_a_word()
-qty_words = len(selected_word)
+print(f"The chosen_word is: {chosen_word}") 
 
-# print(selected_word)
-
-test_word = "aaa-bbb-ccc"
-temp_word = test_word
-
-corret_word = []
 while hangman == True:
     
-    char = input("\nGuess a word: ")
-    word_chosed = []
-    for word in test_word:
-        if char == word_chosed:
-            break
-        elif char == word:
-            ind = test_word.index(char)
-            corret_word.insert(ind,char)
-            word_chosed.insert(char)
+    guess = input("\nGuess a word: ")
+    for word in chosen_word:
+        if guess == word:
+            print("Right", end = " ")
         else:
-            print("_", end=" ")
-    
-    
-    
-    print(corret_word, end=" ")
+            print("Wrong", end=" ")
     
 
 
